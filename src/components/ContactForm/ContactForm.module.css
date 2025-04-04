@@ -1,0 +1,18 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+form button {
+  padding: 10px 16px;
+  background-color: #007bff;
+  color: white;
+  width: 50%;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}

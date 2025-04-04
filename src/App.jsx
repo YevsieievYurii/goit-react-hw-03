@@ -1,50 +1,27 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "./App.css";
+import ContactForm from "./components/ContactForm/ContactForm";
+import ContactList from "./components/ContactList/ContactList";
 // import { useId } from "react";
 
 const App = () => {
-  const LoginForm = () => {
-    const [values, setValues] = useState({
-      login: "",
-      password: "",
-    });
+  const [contacts] = useState([
+    { id: "id-1", name: "John Travolta", number: "459-12-56" },
+    { id: "id-2", name: "Nicolas Cage", number: "443-89-12" },
+    { id: "id-3", name: "Charlize Theron", number: "645-17-79" },
+    { id: "id-4", name: "Christian Bale", number: "227-91-26" },
+    { id: "id-5", name: "Микола Біла Церква", number: "097-181-65-03" },
+    { id: "id-6", name: "Mike Tyson", number: "144-02-85" },
+  ]);
 
-    const handleChange = (evt) => {
-      setValues({
-        ...values,
-        [evt.target.name]: evt.target.value,
-      });
-    };
-
-    const handleSumit = (evt) => {
-      evt.preventDefault();
-
-      console.log(values);
-
-      setValues({
-        login: "",
-        password: "",
-      });
-    };
-
-    return (
-      <form onSubmit={handleSumit}>
-        <input
-          type="text"
-          name="login"
-          value={values.login}
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          value={values.password}
-          onChange={handleChange}
-        />
-        <button type="submit">Login</button>
-      </form>
-    );
-  };
+  return (
+    <div>
+      <h1>Phonebook</h1>
+      <ContactForm />
+      {/* <SearchBox /> */}
+      <ContactList contacts={contacts} />
+    </div>
+  );
 };
 
 export default App;
