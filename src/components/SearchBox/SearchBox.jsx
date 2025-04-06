@@ -2,7 +2,7 @@ const SearchBox = ({ value, onChange }) => {
   return (
     <input
       type="text"
-      placeholder="Пошук за ім’ям"
+      placeholder="find contact by name"
       value={value}
       onChange={(e) => onChange(e.target.value)}
     />
